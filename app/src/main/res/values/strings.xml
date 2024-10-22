@@ -6,4 +6,8 @@
     <string name="next">Далее</string>
     <string name="currency_rate">Курсы валют всегда под рукой</string>
     <string name="fast">Быстро, легко и удобно</string>
+    <string name="registration">Регистрация</string>
+    <string name="email">Электронная почта</string>
+    <string name="hilt_email">Ivanov@mail.ru</string>
+    <string name="password">Пароль</string>
 </resources>
