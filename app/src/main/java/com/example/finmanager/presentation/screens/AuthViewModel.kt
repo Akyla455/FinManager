@@ -21,11 +21,6 @@ class AuthViewModel @Inject constructor(
     private val checkOnboardingUseCase: CheckOnboardingUseCase
 ) : ViewModel() {
 
-    var login by mutableStateOf("")
-    var password by mutableStateOf("")
-    var isAuthenticated by mutableStateOf(false)
-    var onboardingCompleted by mutableStateOf(false)
-
     init {
         viewModelScope.launch {
             checkOnboardingUseCase.execute().collect{ completed ->
@@ -38,21 +33,19 @@ class AuthViewModel @Inject constructor(
             }
         }
     }
-//    fun onLoginChanged(newLogin: String){
-//        login = newLogin
-//    }
-//
-//    fun onPasswordChanged(newPassword: String){
-//        password = newPassword
-//    }
+
+    private var login by mutableStateOf("")
+    private var password by mutableStateOf("")
+    var isAuthenticated by mutableStateOf(false)
+    var onboardingCompleted by mutableStateOf(false)
 
     fun onRegisterChanged(newLogin: String, newPassword: String){
         login = newLogin
         password = newPassword
-        login()
+        saveLogin()
     }
 
-    private fun login(){
+    private fun saveLogin(){
         if(validateLoginUseCase.execute(login, password)){
             viewModelScope.launch {
                 userPreferencesManager.saveUserPreferences(login, password)

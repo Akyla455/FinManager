@@ -44,4 +44,10 @@ class PreferencesManager @Inject constructor
         }
     }
 
+    suspend fun checkUserPreferences(login: String, password: String){
+        dataStore.edit { preferences ->
+            preferences[LOGIN_KEY]
+        }
+    }
+
 }

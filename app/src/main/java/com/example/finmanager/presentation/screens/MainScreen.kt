@@ -3,7 +3,7 @@ package com.example.finmanager.presentation.screens
 import androidx.compose.runtime.Composable
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
-import com.example.finmanager.presentation.screens.authorization.AuthorizationScreen
+import com.example.finmanager.presentation.screens.authorization.RegisterScreen
 import com.example.finmanager.presentation.screens.onboarding.OnboardingScreen
 
 @Composable
@@ -22,7 +22,7 @@ fun MainScreen(
             })
         }
         !isAuthenticated -> {
-            AuthorizationScreen(navController = navController)
+            RegisterScreen(navController = navController)
         }
     }
 }

@@ -10,4 +10,8 @@
     <string name="email">Электронная почта</string>
     <string name="hilt_email">Ivanov@mail.ru</string>
     <string name="password">Пароль</string>
+    <string name="authorization">Авторизация</string>
+    <string name="have_an_account">У вас уже есть учётная запись?</string>
+    <string name="enter">Войти</string>
+    <string name="dont_account">У вас нет учётной записи?</string>
 </resources>

@@ -1,5 +1,6 @@
 package com.example.finmanager.presentation.ui_components
 
+import androidx.compose.foundation.clickable
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -12,13 +13,18 @@ import androidx.compose.ui.unit.sp
 @Composable
 fun SmallTransparentText(
     modifier: Modifier = Modifier,
-    text: Int
+    text: Int,
+    onClick: () -> Unit = {},
+    color: Color = Color.Gray
 ) {
     Text(
         text = stringResource(text),
-        modifier = modifier,
+        modifier = modifier
+            .clickable {
+                onClick()
+            },
         fontSize = 13.sp,
-        color = Color.Gray,
+        color = color,
         textAlign = TextAlign.Center,
         fontWeight = FontWeight.Light
     )
