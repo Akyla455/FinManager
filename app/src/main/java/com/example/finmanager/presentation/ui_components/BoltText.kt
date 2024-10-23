@@ -10,7 +10,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.sp
 
 @Composable
-fun OnboardingText(
+fun BoltText(
     modifier: Modifier = Modifier,
     text: Int,
 ){
