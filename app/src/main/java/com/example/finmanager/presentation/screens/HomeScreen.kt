@@ -9,17 +9,29 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
-import com.example.finmanager.presentation.ui_components.BoltText
 
 @Composable
-fun Profile(){
+fun HomeScreen(){
     Column(
         modifier = Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
         Text(
-            text = "Профиль",
+            text = "Home",
+            fontSize = 28.sp,
+            fontWeight = FontWeight.Bold
+        )
+    }
+}@Composable
+fun StatisticScreen(){
+    Column(
+        modifier = Modifier.fillMaxSize(),
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center
+    ) {
+        Text(
+            text = "Statistic",
             fontSize = 28.sp,
             fontWeight = FontWeight.Bold
         )

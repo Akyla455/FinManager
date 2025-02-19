@@ -3,12 +3,6 @@ plugins {
     alias(libs.plugins.jetbrains.kotlin.android)
     kotlin("kapt")
     id ("com.google.dagger.hilt.android")
-    //kotlin("kapt")
-    //id("com.google.dagger.hilt.android")
-    //id("com.google.devtools.ksp") version "2.0.20-1.0.24"
-
-//    id ("kotlin-kapt")
-//    id ("dagger.hilt.android.plugin")
 }
 
 android {
@@ -58,6 +52,9 @@ android {
 }
 
 dependencies {
+    implementation (libs.squareup.retrofit)
+    implementation (libs.converter.gson)
+
     implementation(libs.androidx.navigation.compose)
     implementation(libs.androidx.datastore.core)
     implementation(libs.androidx.datastore.preferences)
@@ -78,15 +75,17 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
     implementation ("com.google.dagger:hilt-android:2.52")
     kapt ("com.google.dagger:hilt-compiler:2.52")
-    //implementation (libs.hilt.android)
-    //annotationProcessor (libs.hilt.compiler)
-    //implementation(libs.hilt.android)
-    //kapt(libs.hilt.compiler)
     implementation(libs.androidx.hilt.navigation.compose)
-//    implementation (libs.androidx.hilt.lifecycle.viewmodel)
-    //implementation (libs.androidx.hilt.lifecycle.viewmodel)
-}
+//    testImplementation(libs.mockito.kotlin)
+//    testImplementation(libs.mockito.core)
+    testImplementation("org.mockito.kotlin:mockito-kotlin:5.2.0")
+    testImplementation("org.mockito:mockito-core:5.7.0")
+    testImplementation(libs.kotlinx.coroutines.test)
 
-//kapt{
-//    correctErrorTypes = true
-//}
+    implementation("androidx.room:room-runtime:2.6.1")
+    kapt ("androidx.room:room-compiler:2.6.1")
+    implementation("androidx.room:room-ktx:2.6.1")
+    testImplementation("androidx.room:room-testing:2.6.1")
+    implementation (libs.accompanist.swiperefresh)
+
+}

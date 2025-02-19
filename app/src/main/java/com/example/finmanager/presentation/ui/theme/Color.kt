@@ -12,3 +12,5 @@ val Pink40 = Color(0xFF7D5260)
 
 val SecondaryColor = Color(0xFF03DAC6)
 val ModeratelyBlue = Color(0xFF5063BF)
+val Plum = Color(0xFFDDA0DD)
+val Thistle = Color(0xFFD8BFD8)

@@ -21,7 +21,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.example.finmanager.R
-import com.example.finmanager.presentation.navigation.RouteNavigate
 import com.example.finmanager.presentation.ui_components.MulticoloredText
 import com.example.finmanager.presentation.ui_components.NextButton
 import com.example.finmanager.presentation.ui.theme.ModeratelyBlue
@@ -29,14 +28,12 @@ import com.example.finmanager.presentation.ui.theme.SecondaryColor
 import kotlinx.coroutines.delay
 
 @Composable
-fun WelcomeScreen(
-    navController: NavController
-) {
+fun WelcomeScreen()
 
+ {
     var firstCircleOffsetX by remember { mutableStateOf((-400).dp) }
     var secondCircleOffsetX by remember { mutableStateOf(400.dp) }
     var textOffsetY by remember { mutableStateOf(600.dp) }
-    //var buttonOffsetY by remember { mutableStateOf((-1000).dp) }
 
     LaunchedEffect(Unit) {
         delay(300)
@@ -46,8 +43,6 @@ fun WelcomeScreen(
         delay(1000)
         textOffsetY = (-30).dp
 
-//        delay(500)
-//        buttonOffsetY = 120.dp
     }
 
     val animatedFirstCircleOffsetX by animateDpAsState(
@@ -67,12 +62,6 @@ fun WelcomeScreen(
         animationSpec = tween(durationMillis = 1000),
         label = ""
     )
-
-//    val animatedButtonOffsetY by animateDpAsState(
-//        targetValue = buttonOffsetY,
-//        animationSpec = tween(durationMillis = 1000),
-//        label = ""
-//    )
 
     Column(
         modifier = Modifier
@@ -104,17 +93,6 @@ fun WelcomeScreen(
         MulticoloredText(
             offset = animatedTextOffsetY
         )
-
-        LaunchedEffect(Unit) {
-            delay(2500)
-            navController.navigate(RouteNavigate.MAIN)
-        }
-
-//        NextButton(
-//            onClick = { navController.navigate(RouteNavigate.ONBOARDING) },
-//            offset = animatedButtonOffsetY,
-//            text = R.string.get_started
-//        )
     }
 }
 

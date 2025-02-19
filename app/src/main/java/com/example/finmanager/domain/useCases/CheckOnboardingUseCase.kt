@@ -1,4 +1,4 @@
-package com.example.finmanager.domain
+package com.example.finmanager.domain.useCases
 
 import com.example.finmanager.data.PreferencesManager
 import kotlinx.coroutines.flow.Flow
